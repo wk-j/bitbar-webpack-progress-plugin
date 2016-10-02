@@ -1,6 +1,3 @@
-var webpack = require("webpack");
-var fs = require("fs")
-
 var BitBarWebpackProgressPlugin = require("../index");
 
 module.exports = {
@@ -12,9 +9,6 @@ module.exports = {
     filename: "[name].js",
     path: "./dist/js",
     libraryTarget: "commonjs2"
-  },
-  externals: {
-    electron: true
   },
   target: "node",
   node: {
@@ -30,6 +24,6 @@ module.exports = {
     }]
   },
   plugins: [
-      new BitBarWebpackProgressPlugin(webpack)
+      new BitBarWebpackProgressPlugin()
   ]
 };
