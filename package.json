@@ -1,0 +1,11 @@
+{
+  "name": "bitbar-webpack-progress-plugin",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "index.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
