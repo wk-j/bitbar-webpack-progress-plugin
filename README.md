@@ -1,4 +1,8 @@
-## Bitbar Webpack Progress Addin
+## Bitbar Webpack Progress Plugin
+
+Display webpack build progress in Mac OS X Menu Bar
+
+![](screen/webpack.png)
 
 ## Install Webpack Plugin
 
