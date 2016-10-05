@@ -9,7 +9,6 @@ var os = require("os");
 function BitBarWebpackProgressPlugin(handler) {
   function write(p, msg) {
     let filePath = `${os.tmpdir()}/webpack-progress`;
-	console.log(filePath);
     let percentage = `${Math.round(p * 100)}`;
     fs.writeFileSync(filePath, percentage)
   }
