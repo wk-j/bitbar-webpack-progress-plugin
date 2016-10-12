@@ -2,11 +2,11 @@
 
 Display webpack build progress in Mac OS X Menu Bar
 
-![](screen/webpack.png)
+![](https://github.com/wk-j/bitbar-webpack-progress-plugin/raw/master/screen/webpack.png)
 
 ## Install Webpack Plugin
 
-`npm install --save bitbar-webpack-progress-addin`
+`npm install --save bitbar-webpack-progress-plugin`
 
 ## Install Bitbar Plugin
 
