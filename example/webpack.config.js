@@ -1,13 +1,14 @@
-var BitBarWebpackProgressPlugin = require("../index");
-
+const BitBarWebpackProgressPlugin = require("..");
+const path = require("path");
 module.exports = {
+  mode: "development",
   entry: {
     main: "./app/main",
     renderer: "./app/renderer"
   },
   output: {
     filename: "[name].js",
-    path: "./dist/js",
+    path: path.join(__dirname, "dist", "js"),
     libraryTarget: "commonjs2"
   },
   target: "node",
@@ -17,13 +18,14 @@ module.exports = {
   },
   devtool: "source-map",
   module: {
-    preLoaders: [{
-      loader: "source-map-loader",
-      exclude: /node_modules/,
-      test: /\.js$/
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        use: "source-map-loader",
+        enforce: "pre",
+        exclude: /node_modules/
+      }
+    ]
   },
-  plugins: [
-      new BitBarWebpackProgressPlugin()
-  ]
+  plugins: [new BitBarWebpackProgressPlugin()]
 };
