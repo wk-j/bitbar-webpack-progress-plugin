@@ -4,8 +4,6 @@
   "scripts": {
     "start": "index.js"
   },
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
