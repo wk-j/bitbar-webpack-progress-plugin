@@ -6,7 +6,7 @@ Display webpack build progress in macOS Menu Bar.
 
 ## Install Webpack Plugin
 
-`npm install --save bitbar-webpack-progress-plugin`
+`npm install --save-dev bitbar-webpack-progress-plugin`
 
 ## Install Bitbar Plugin
 
@@ -15,33 +15,25 @@ Display webpack build progress in macOS Menu Bar.
 ## Usage
 
 ```javascript
-var BitBarWebpackProgressPlugin = require("bitbar-webpack-progress-plugin");
+const BitBarWebpackProgressPlugin = require("bitbar-webpack-progress-plugin");
+const path = require("path");
 
 module.exports = {
+  mode: "development",
   entry: {
-    main: "./app/main",
-    renderer: "./app/renderer"
+    main: "./app/main"
   },
   output: {
     filename: "[name].js",
-    path: "./dist/js",
-    libraryTarget: "commonjs2"
-  },
-  target: "node",
-  node: {
-    __dirname: false,
-    __filename: false
+    path: path.join(__dirname, "dist", "js")
   },
   devtool: "source-map",
   module: {
-    preLoaders: [{
-      loader: "source-map-loader",
-      exclude: /node_modules/,
-      test: /\.js$/
-    }]
+    rules: [
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
+    ]
   },
-  plugins: [
-      new BitBarWebpackProgressPlugin()
-  ]
+  plugins: [new BitBarWebpackProgressPlugin()]
 };
 ```
